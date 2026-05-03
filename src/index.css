@@ -1,8 +1,13 @@
 :root {
   --color-bg-page:          #F6F6F6;
   --color-bg-card:          #FFFFFF;
+  --color-bg-surface:       #FFFFFF;
+  --color-bg-surface-muted: #F4F6F9;
+  --color-border:           #E8E8E8;
   --color-primary:          #198CFE;
   --color-primary-light:    #EEF3FF;
+  --color-icon-muted:       #8D8D8D;
+  --color-icon-strong:      #1C1C2E;
   --color-text-primary:     #1C1C2E;
   --color-text-secondary:   #8D8D8D;
   --color-text-muted:       #BDBDBD;
@@ -14,7 +19,12 @@
 [data-bs-theme="dark"] {
   --color-bg-page:          #0F1117;
   --color-bg-card:          #1A1D2E;
+  --color-bg-surface:       #1A1D2E;
+  --color-bg-surface-muted: #22273A;
+  --color-border:           #2A2D3E;
   --color-primary-light:    #1a2a4a;
+  --color-icon-muted:       #8D8D9B;
+  --color-icon-strong:      #E8E8F0;
   --color-text-primary:     #E8E8F0;
   --color-text-secondary:   #8D8D9B;
   --color-text-muted:       #555567;

@@ -1,13 +1,10 @@
-import { Outlet } from "react-router"
+import { Outlet } from "react-router";
+import MainLayout from "./main-layout";
 
-function AppShell() {
+export default function AppShell() {
   return (
-    <div className="d-flex" style={{ minHeight: "100vh" }}>
-      <main className="flex-grow-1 p-3">
-        <Outlet />
-      </main>
-    </div>
-  )
+    <MainLayout>
+      <Outlet />
+    </MainLayout>
+  );
 }
-
-export default AppShell
