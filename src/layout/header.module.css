@@ -1,0 +1,16 @@
+.header {
+  background-color: var(--color-bg-card);
+}
+
+.langBtn {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  box-shadow: 0 2px 4px rgba(18, 1, 1, 0.1);
+}
+
+.iconBtn {
+  width: 34px;
+  height: 34px;
+  color: var(--color-icon-muted);
+  box-shadow: 0 2px 4px rgba(18, 1, 1, 0.1);
+}
