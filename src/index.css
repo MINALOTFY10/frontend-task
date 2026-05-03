@@ -1,18 +1,11 @@
 :root {
-  --color-bg-page:          #F0F2F5;
+  --color-bg-page:          #F6F6F6;
   --color-bg-card:          #FFFFFF;
-  --color-primary:          #4880FF;
+  --color-primary:          #198CFE;
   --color-primary-light:    #EEF3FF;
   --color-text-primary:     #1C1C2E;
   --color-text-secondary:   #8D8D8D;
   --color-text-muted:       #BDBDBD;
-  --color-positive:         #00B69B;
-  --color-positive-bg:      #E8F8F5;
-  --color-negative:         #EF4444;
-  --color-negative-bg:      #FEF2F2;
-  --color-border:           #E8E8E8;
-  --color-sidebar-active:   #4880FF;
-  --color-sidebar-inactive: #9B9B9B;
   --radius-card:            14px;
   --radius-badge:           6px;
   --font-primary:           'Inter', sans-serif;
@@ -21,16 +14,8 @@
 [data-bs-theme="dark"] {
   --color-bg-page:          #0F1117;
   --color-bg-card:          #1A1D2E;
-  --color-primary:          #4880FF;
   --color-primary-light:    #1a2a4a;
   --color-text-primary:     #E8E8F0;
   --color-text-secondary:   #8D8D9B;
   --color-text-muted:       #555567;
-  --color-positive:         #00B69B;
-  --color-positive-bg:      #0a2e2a;
-  --color-negative:         #EF4444;
-  --color-negative-bg:      #2e1010;
-  --color-border:           #2A2D3E;
-  --color-sidebar-active:   #4880FF;
-  --color-sidebar-inactive: #555567;
 }
