@@ -1,24 +1,27 @@
-import "./App.css";
-import { Button, Card } from "react-bootstrap";
-import { useTheme } from "./context/theme-context";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router";
+import ProtectedRoute from "./layout/protected-route";
+import AppShell from "./layout/app-shell";
+import Login from "./pages/login";
+import Dashboard from "./pages/dashboard";
 
-function App() {
-  const { theme, toggleTheme } = useTheme();
+const router = createBrowserRouter([
+  { path: "/login", element: <Login /> },
+  {
+    path: "/",
+    element: (
+      <ProtectedRoute>
+        <AppShell />
+      </ProtectedRoute>
+    ),
+    children: [
+      { index: true, element: <Navigate to="/dashboard" replace /> },
+      { path: "dashboard", element: <Dashboard /> },
+    ],
+  },
 
-  return (
-    <div>
-      <section id="next-steps">
-        <Card className="p-3">
-          <Card.Body>
-            <Card.Title>Frontend Task</Card.Title>
-            <Button variant={theme === "light" ? "dark" : "light"} onClick={toggleTheme}>
-              {theme === "light" ? "dark" : "light"}
-            </Button>
-          </Card.Body>
-        </Card>
-      </section>
-    </div>
-  );
+  { path: "*", element: <Navigate to="/dashboard" replace /> },
+]);
+
+export default function App() {
+  return <RouterProvider router={router} />;
 }
-
-export default App;
