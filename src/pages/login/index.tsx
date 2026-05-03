@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Navigate } from "react-router";
+import { useNavigate, Navigate, Link } from "react-router";
 import { Container, Card, Form, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../../context/auth-context";
 import styles from "./login.module.css";
@@ -47,7 +47,7 @@ function Login() {
           </div>
 
           <Form onSubmit={handleSubmit} noValidate>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3" controlId="loginUsername">
               <Form.Label className={`${styles.loginLabel} text-uppercase fw-semibold`}>Username</Form.Label>
               <Form.Control
                 className={`${styles.loginInput} border-0`}
@@ -60,7 +60,7 @@ function Login() {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3" controlId="loginPassword">
               <Form.Label className={`${styles.loginLabel} text-uppercase fw-semibold`}>Password</Form.Label>
               <Form.Control
                 className={`${styles.loginInput} border-0`}
@@ -85,9 +85,9 @@ function Login() {
 
           <div className="text-center mt-4">
             <span className={styles.loginMeta}>Don't have an account? </span>
-            <a href="" className={`${styles.loginLink} text-decoration-none fw-semibold`}>
+            <Link to="/signup" className={`${styles.loginLink} text-decoration-none fw-semibold`}>
               Sign Up
-            </a>
+            </Link>
           </div>
         </Card.Body>
       </Card>
