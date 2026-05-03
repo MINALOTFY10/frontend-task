@@ -8,16 +8,12 @@ interface ThemeContextType {
   toggleTheme: () => void;
 }
 
-const ThemeContext = createContext<ThemeContextType>({
-  theme: "light",
-  toggleTheme: () => {},
-});
-
+const ThemeContext = createContext<ThemeContextType | null>(null);
 
 function getInitialTheme() {
   const saved = localStorage.getItem(STORAGE_KEY);
-  return (saved === "light" || saved === "dark") ? saved : "light";
-};
+  return saved === "light" || saved === "dark" ? saved : "light";
+}
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
