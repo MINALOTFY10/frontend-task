@@ -1,31 +1,39 @@
 :root {
-  --color-bg-page:          #F6F6F6;
-  --color-bg-card:          #FFFFFF;
-  --color-bg-surface:       #FFFFFF;
-  --color-bg-surface-muted: #F4F6F9;
-  --color-border:           #E8E8E8;
-  --color-primary:          #198CFE;
-  --color-primary-light:    #EEF3FF;
-  --color-icon-muted:       #8D8D8D;
-  --color-icon-strong:      #1C1C2E;
-  --color-text-primary:     #1C1C2E;
-  --color-text-secondary:   #8D8D8D;
-  --color-text-muted:       #BDBDBD;
-  --radius-card:            14px;
-  --radius-badge:           6px;
-  --font-primary:           'Inter', sans-serif;
+  --color-bg-page: #f6f6f6;
+  --color-bg-card: #ffffff;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-muted: #f4f6f9;
+  --color-border: #e8e8e8;
+  --color-primary: #198cfe;
+  --color-primary-light: #eef3ff;
+  --color-icon-muted: #8d8d8d;
+  --color-icon-strong: #1c1c2e;
+  --color-text-primary: #1c1c2e;
+  --color-text-secondary: #8d8d8d;
+  --color-text-muted: #bdbdbd;
+  --color-positive-bg: #E4F5E1;
+  --color-positive: #4B9A3D;
+  --color-negative-bg: #FDE8E8;
+  --color-negative: #D32F2F;
+  --radius-card: 14px;
+  --radius-badge: 6px;
+  --font-primary: "Inter", sans-serif;
 }
 
 [data-bs-theme="dark"] {
-  --color-bg-page:          #0F1117;
-  --color-bg-card:          #1A1D2E;
-  --color-bg-surface:       #1A1D2E;
-  --color-bg-surface-muted: #22273A;
-  --color-border:           #2A2D3E;
-  --color-primary-light:    #1a2a4a;
-  --color-icon-muted:       #8D8D9B;
-  --color-icon-strong:      #E8E8F0;
-  --color-text-primary:     #E8E8F0;
-  --color-text-secondary:   #8D8D9B;
-  --color-text-muted:       #555567;
+  --color-bg-page: #0f1117;
+  --color-bg-card: #1a1d2e;
+  --color-bg-surface: #1a1d2e;
+  --color-bg-surface-muted: #22273a;
+  --color-border: #2a2d3e;
+  --color-primary-light: #1a2a4a;
+  --color-icon-muted: #8d8d9b;
+  --color-icon-strong: #e8e8f0;
+  --color-text-primary: #e8e8f0;
+  --color-text-secondary: #8d8d9b;
+  --color-text-muted: #555567;
+  --color-positive-bg: #2E4F2E;
+  --color-positive: #81C784;
+  --color-negative-bg: #4F2E2E;
+  --color-negative: #EF9A9A;
 }

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate, Navigate } from "react-router";
 import { Container, Card, Form, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../../context/auth-context";
-import styles from "./login.module.css";
 
 function Login() {
   const { login, user } = useAuth();
@@ -38,7 +37,7 @@ function Login() {
   };
 
   return (
-    <Container fluid className={`${styles.loginPage} d-flex align-items-center justify-content-center min-vh-100`}>
+    <Container fluid className="d-flex align-items-center justify-content-center min-vh-100" style={{ backgroundColor: "var(--color-bg-page)" }}>
       <Card className="w-100 border-0 shadow-sm p-4 rounded-4" style={{ maxWidth: 560 }}>
         <Card.Body>
           <div className="text-center mb-5">
