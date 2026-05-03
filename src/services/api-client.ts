@@ -8,7 +8,6 @@ function getAuthHeaders(): Record<string, string> {
 export async function get<T>(endpoint: string): Promise<T> {
   const res = await fetch(`${BASE_URL}${endpoint}`, {
     headers: {
-      "Content-Type": "application/json",
       ...getAuthHeaders(),
     },
   });
