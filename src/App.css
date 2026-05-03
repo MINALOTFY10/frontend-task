@@ -6,8 +6,7 @@ body {
 }
 
 :root {
-  --bs-primary:             #4880FF;
-  --bs-primary-rgb:         72, 128, 255;
+  --bs-primary:             #198CFE;
   --bs-border-color:        #E8E8E8;
   --bs-border-radius-lg:    14px;
   --bs-card-border-color:   #E8E8E8;
@@ -21,15 +20,4 @@ body {
   --bs-card-bg:             #1A1D2E;
   --bs-card-border-color:   #2A2D3E;
   --bs-border-color:        #2A2D3E;
-}
-
-.btn-primary {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: #3a6fef;
-  border-color: #3a6fef;
 }
