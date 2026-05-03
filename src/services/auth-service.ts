@@ -1,15 +1,5 @@
-import { post } from "./api-client";
-
-export interface User {
-  id: number;
-  username: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  image: string;
-  accessToken: string;
-  refreshToken: string;
-}
+import { get, post } from "./api-client";
+import type { User, Product, ProductsResponse } from "./types";
 
 // localStorage is used for simplicity with DummyJSON, but in real production apps I made
 // tokens was stored in httpOnly cookies which i couldn't do with mock api
@@ -42,4 +32,16 @@ export function getStoredUser() {
 
 export function isAuthenticated(): boolean {
   return !!localStorage.getItem("accessToken");
+}
+
+export async function getProducts(limit = 10, skip = 0): Promise<ProductsResponse> {
+  return get<ProductsResponse>(`/products?limit=${limit}&skip=${skip}`);
+}
+
+export async function getProductById(id: number): Promise<Product> {
+  return get<Product>(`/products/${id}`);
+}
+
+export async function searchProducts(query: string): Promise<ProductsResponse> {
+  return get<ProductsResponse>(`/products/search?q=${encodeURIComponent(query)}`);
 }

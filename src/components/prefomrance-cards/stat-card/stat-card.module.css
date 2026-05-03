@@ -1,0 +1,9 @@
+.badgePositive {
+  background-color: var(--color-positive-bg) !important;
+  color: var(--color-positive) !important;
+}
+
+.badgeNegative {
+  background-color: var(--color-negative-bg) !important;
+  color: var(--color-negative) !important;
+}
