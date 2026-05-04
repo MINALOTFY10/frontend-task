@@ -6,7 +6,7 @@ import ChartCard from "./chart-card";
 function TransactionTooltip({ payload, label }: TooltipContentProps<ValueType, NameType>) {
   return (
     <div className="bg-white rounded-3 p-3" style={{ fontSize: "0.85rem" }}>
-      <p className="fw-semibold mb-3" style={{ color: "var(--color-text-secondary)" }}>
+      <p className="fw-semibold mb-3 text-secondary-custom">
         {label}, 2026
       </p>
       {payload.map((entry) => (

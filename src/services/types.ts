@@ -38,3 +38,13 @@ export interface Cart {
   totalProducts: number
   totalQuantity: number
 }
+
+export type UsersResponse = {
+  users: User[];
+  total: number;
+};
+
+export type CartResponse = {
+  carts: Cart[];
+  total: number;
+};

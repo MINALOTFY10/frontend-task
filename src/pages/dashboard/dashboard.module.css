@@ -1,0 +1,40 @@
+.dashboardRow {
+  display: grid;
+  gap: 1rem;
+  --chart-card-height: 320px;
+  --chart-grid-gap: 1rem;
+  --schedule-height-offset: 12px;
+}
+
+.leftColumn {
+  min-width: 0;
+}
+
+.rightColumn {
+  min-width: 0;
+  min-height: 0;
+  max-height: calc((var(--chart-card-height) * 2) - 50px);
+  display: flex;
+}
+
+.scheduleWrap {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+@media (min-width: 992px) {
+  .dashboardRow {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .rightColumn {
+    height: calc((var(--chart-card-height) * 2) + var(--chart-grid-gap) - var(--schedule-height-offset));
+  }
+}
+
+@media (min-width: 1200px) {
+  .dashboardRow {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+  }
+}

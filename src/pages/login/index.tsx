@@ -37,7 +37,7 @@ function Login() {
   };
 
   return (
-    <Container fluid className="d-flex align-items-center justify-content-center min-vh-100" style={{ backgroundColor: "var(--color-bg-page)" }}>
+    <Container fluid className="d-flex align-items-center justify-content-center min-vh-100 bg-page-custom">
       <Card className="w-100 border-0 shadow-sm p-4 rounded-4" style={{ maxWidth: 560 }}>
         <Card.Body>
           <div className="text-center mb-5">
