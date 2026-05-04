@@ -29,7 +29,6 @@ export default function MeetingCard({ meeting }: { meeting: Meeting }) {
         <p className="mb-0 small text-secondary" style={{fontSize: "0.75rem"}}>{meeting.time}</p>
       </div>
 
-      {}
       {meeting.platform && <div className="px-3 pb-2 small text-secondary">{meeting.platform}</div>}
     </div>
   );

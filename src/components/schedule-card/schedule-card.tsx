@@ -14,7 +14,7 @@ export default function Schedule() {
     <Card className="border-0 rounded-4 h-100 d-flex flex-column overflow-hidden">
       <Card.Body className="p-3 d-flex flex-column">
         <Stack direction="horizontal" className="justify-content-between mb-3">
-          <span className="fw-bold text-dark">Schedule</span>
+          <span className="fw-bold text-primary-custom">Schedule</span>
           <Stack direction="horizontal" gap={2}>
             <button className="btn p-0 border-0 btn-link text-decoration-none fw-semibold text-primary-custom" style={{ fontSize: "0.75rem" }}>
               See All
@@ -25,7 +25,7 @@ export default function Schedule() {
           </Stack>
         </Stack>
 
-        <Stack direction="horizontal" className="justify-content-between align-items-center rounded-3 px-2 py-1 mb-3 bg-light">
+        <Stack direction="horizontal" className="justify-content-between align-items-center rounded-3 px-2 py-1 mb-3">
           <button className="btn p-0 border-0">
             <LuChevronLeft size={15} />
           </button>

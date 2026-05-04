@@ -12,20 +12,22 @@ export function useTransactionStats() {
   const [data, setData] = useState<ChartDataPoint[]>([]);
 
   useEffect(() => {
-    getCarts(60, 0).then(({ carts }) => {
-      const perMonth = Math.ceil(carts.length / 12);
+    getCarts(60, 0)
+      .then(({ carts }) => {
+        const perMonth = Math.ceil(carts.length / 12);
 
-      const chartData = MONTHS.map((month, i) => {
-        const slice = carts.slice(i * perMonth, (i + 1) * perMonth);
-        return {
-          month,
-          total: slice.reduce((sum, c) => sum + Math.round(c.totalQuantity), 0),
-          success: slice.reduce((sum, c) => sum + Math.round(c.totalProducts), 0),
-        };
-      });
+        const chartData = MONTHS.map((month, i) => {
+          const slice = carts.slice(i * perMonth, (i + 1) * perMonth);
+          return {
+            month,
+            total: slice.reduce((sum, c) => sum + Math.round(c.totalQuantity), 0),
+            success: slice.reduce((sum, c) => sum + Math.round(c.totalProducts), 0),
+          };
+        });
 
-      setData(chartData);
-    });
+        setData(chartData);
+      })
+      .catch((err: Error) => new Error(`Failed to fetch Transaction stats: ${err.message}`));
   }, []);
 
   return { data };
