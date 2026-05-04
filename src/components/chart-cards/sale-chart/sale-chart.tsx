@@ -1,8 +1,8 @@
 import { Stack } from "react-bootstrap";
 import { ResponsiveContainer, BarChart, Bar, XAxis, Tooltip, type TooltipContentProps } from "recharts";
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
-import { useSaleStats } from "../../hooks/use-sale-stats";
-import ChartCard from "./chart-card";
+import { useSaleStats } from "../../../hooks/use-sale-stats";
+import ChartCard from "../chart-card";
 
 function SaleTooltip({ payload, label }: TooltipContentProps<ValueType, NameType>) {
   if (!payload?.length) return null;

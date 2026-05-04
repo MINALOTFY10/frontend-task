@@ -5,9 +5,17 @@ import type { ReactNode } from "react";
 interface ChartCardProps {
   title: ReactNode;
   children: ReactNode;
+  action?: ReactNode;
 }
 
-export default function ChartCard({ title, children }: ChartCardProps) {
+export default function ChartCard({ title, children, action }: ChartCardProps) {
+  const defaultAction = (
+    <>
+      <span className="fw-semibold">Last Year</span>
+      <FaCalendarAlt className="ms-2" size={11} />
+    </>
+  );
+
   return (
     <Card
       className="border-0 rounded-4 h-100"
@@ -15,12 +23,14 @@ export default function ChartCard({ title, children }: ChartCardProps) {
     >
       <Card.Body>
         <Stack direction="horizontal" className="justify-content-between align-items-center mb-1 pb-2">
-          <span className="fw-bold text-primary-custom">
+          <div className="fw-bold text-primary-custom">
             {title}
-          </span>
-          <div className="w-auto border-0 bg-light text-secondary" style={{ fontSize: "0.75rem" }}>
-            <span className="fw-semibold">Last Year</span>
-            <FaCalendarAlt className="ms-2" size={11} />
+          </div>
+          <div
+            className="d-flex align-items-center gap-3 w-auto border-0 text-secondary"
+            style={{ fontSize: "0.75rem" }}
+          >
+            {action ?? defaultAction}
           </div>
         </Stack>
         <div style={{ width: "100%", height: "220px" }}>{children}</div>
