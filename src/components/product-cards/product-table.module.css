@@ -1,0 +1,7 @@
+.listGrid {
+  display: grid;
+  grid-template-columns: minmax(180px, 2fr) repeat(3, minmax(80px, 1fr)) 70px;
+  gap: 12px;
+  align-items: center;
+  min-width: 760px;
+}

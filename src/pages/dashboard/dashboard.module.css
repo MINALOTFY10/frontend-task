@@ -1,9 +1,6 @@
 .dashboardRow {
   display: grid;
   gap: 1rem;
-  --chart-card-height: 320px;
-  --chart-grid-gap: 1rem;
-  --schedule-height-offset: 12px;
 }
 
 .rightColumn {
