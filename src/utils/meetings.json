@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "category": "Product Design",
+    "categoryColor": "var(--color-primary)",
+    "categoryBg": "var(--color-primary-light)",
+    "title": "Meeting with Arthur Bell",
+    "time": "09:00 – 09:45 AM (UTC)",
+    "platform": "On Google Meet",
+    "userSlice": [0, 3],
+    "extraCount": 3
+  },
+  {
+    "id": 2,
+    "category": "Marketing Business",
+    "categoryColor": "#F59E0B",
+    "categoryBg": "#FEF3C7",
+    "title": "Meeting with Leslie Perez",
+    "time": "10:00 – 10:45 AM (UTC)",
+    "platform": null,
+    "userSlice": [3, 6],
+    "extraCount": 0
+  },
+  {
+    "id": 3,
+    "category": "Brainstorming Session",
+    "categoryColor": "var(--color-positive)",
+    "categoryBg": "var(--color-positive-bg)",
+    "title": "Meeting with Leslie Perez",
+    "time": "11:00 – 11:45 AM (UTC)",
+    "platform": null,
+    "userSlice": [6, 9],
+    "extraCount": 0
+  },
+  {
+    "id": 4,
+    "category": "Marketing Business",
+    "categoryColor": "#F59E0B",
+    "categoryBg": "#FEF3C7",
+    "title": "Meeting with Anthony Reed",
+    "time": "12:00 – 12:45 PM (UTC)",
+    "platform": null,
+    "userSlice": [3, 6],
+    "extraCount": 0
+  }
+]

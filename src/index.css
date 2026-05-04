@@ -11,10 +11,10 @@
   --color-text-primary: #1c1c2e;
   --color-text-secondary: #8d8d8d;
   --color-text-muted: #bdbdbd;
-  --color-positive-bg: #E4F5E1;
-  --color-positive: #4B9A3D;
-  --color-negative-bg: #FDE8E8;
-  --color-negative: #D32F2F;
+  --color-positive-bg: #e4f5e1;
+  --color-positive: #4b9a3d;
+  --color-negative-bg: #fde8e8;
+  --color-negative: #d32f2f;
   --radius-card: 14px;
   --radius-badge: 6px;
   --font-primary: "Inter", sans-serif;
@@ -32,8 +32,52 @@
   --color-text-primary: #e8e8f0;
   --color-text-secondary: #8d8d9b;
   --color-text-muted: #555567;
-  --color-positive-bg: #2E4F2E;
-  --color-positive: #81C784;
-  --color-negative-bg: #4F2E2E;
-  --color-negative: #EF9A9A;
+  --color-positive-bg: #2e4f2e;
+  --color-positive: #81c784;
+  --color-negative-bg: #4f2e2e;
+  --color-negative: #ef9a9a;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(28, 28, 46, 0.35) transparent;
+}
+
+.text-primary-custom {
+  color: var(--color-text-primary);
+}
+.text-secondary-custom {
+  color: var(--color-text-secondary);
+}
+
+.text-muted-custom {
+  color: var(--color-text-muted);
+}
+
+.text-bg-card-custom {
+  color: var(--color-bg-card);
+}
+
+.primary-custom {
+  color: var(--color-primary);
+}
+
+.bg-primary-custom {
+  background-color: var(--color-primary);
+}
+
+.bg-page-custom {
+  background-color: var(--color-bg-page);
+}
+
+.bg-black-custom {
+  background-color: #000;
+}
+
+.border-custom {
+  border: 1px solid var(--color-border);
+}
+
+.secondary-custom {
+  color: var(--color-secondary);
 }

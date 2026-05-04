@@ -28,12 +28,12 @@ export default function StatCard({ label, value, trend }: StatCardProps) {
 
         <div className="mb-4">
           <span className="fs-4 fw-bold">${Number(whole).toLocaleString()}</span>
-          <span className="fs-5 fw-bold" style={{ color: "var(--color-text-muted)" }}>
+          <span className="fs-5 fw-bold text-muted-custom">
             .{decimal}
           </span>
         </div>
 
-        <p className="fw-semibold mb-0" style={{ fontSize: "0.72rem", color: "var(--color-text-secondary)" }}>
+        <p className="fw-semibold mb-0 text-secondary-custom" style={{ fontSize: "0.72rem" }}>
           {DATE_RANGE}
         </p>
       </Card.Body>

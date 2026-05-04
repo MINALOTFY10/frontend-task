@@ -1,0 +1,11 @@
+.avatar, .extraCount {
+  width: 26px;
+  height: 26px;
+  margin-left: -8px;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.avatar { object-fit: cover; }

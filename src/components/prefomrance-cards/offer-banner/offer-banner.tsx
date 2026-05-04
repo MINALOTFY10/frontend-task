@@ -11,8 +11,8 @@ export default function OfferBanner() {
       </p>
       <Button
         size="sm"
-        className="fw-semibold border-0 w-auto align-self-start rounded-3"
-        style={{ background: "#000", color: "var(--color-bg-card)", fontSize: "0.70rem" }}
+        className="fw-semibold border-0 w-auto align-self-start rounded-3 bg-black-custom text-bg-card-custom"
+        style={{ fontSize: "0.70rem" }}
       >
         Upgrade Now
       </Button>

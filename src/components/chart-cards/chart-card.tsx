@@ -9,10 +9,13 @@ interface ChartCardProps {
 
 export default function ChartCard({ title, children }: ChartCardProps) {
   return (
-    <Card className="border-0 rounded-4 h-100">
+    <Card
+      className="border-0 rounded-4 h-100"
+      style={{ height: "var(--chart-card-height, auto)" }}
+    >
       <Card.Body>
         <Stack direction="horizontal" className="justify-content-between align-items-center mb-1 pb-2">
-          <span className="fw-semibold" style={{ color: "var(--color-text-primary)" }}>
+          <span className="fw-bold text-primary-custom">
             {title}
           </span>
           <div className="w-auto border-0 bg-light text-secondary" style={{ fontSize: "0.75rem" }}>

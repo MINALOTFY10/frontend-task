@@ -8,11 +8,11 @@ function SaleTooltip({ payload, label }: TooltipContentProps<ValueType, NameType
   if (!payload?.length) return null;
   return (
     <div className="bg-white rounded-3 p-3" style={{ fontSize: "0.85rem" }}>
-      <p className="fw-semibold mb-2" style={{ color: "var(--color-text-secondary)" }}>
+      <p className="fw-semibold mb-2 text-secondary-custom">
         {label}, 2026
       </p>
       <div className="d-flex align-items-center gap-2">
-        <div className="rounded-1" style={{ background: "var(--color-primary)", width: 15, height: 15 }} />
+        <div className="rounded-1 bg-primary-custom" style={{ width: 15, height: 15 }} />
         <p className="fw-normal mb-0">
           Sales: <strong className="ms-2">${(payload[0].value as number).toLocaleString()}</strong>
         </p>
