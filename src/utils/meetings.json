@@ -24,8 +24,8 @@
   {
     "id": 3,
     "category": "Brainstorming Session",
-    "categoryColor": "var(--color-positive)",
-    "categoryBg": "var(--color-positive-bg)",
+    "categoryColor": "var(--color-negative)",
+    "categoryBg": "var(--color-negative-bg)",
     "title": "Meeting with Leslie Perez",
     "time": "11:00 – 11:45 AM (UTC)",
     "platform": null,

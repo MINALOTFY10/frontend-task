@@ -1,5 +1,5 @@
 :root {
-  --color-bg-page: #f6f6f6;
+  --color-bg-page: #f5f2f2;
   --color-bg-card: #ffffff;
   --color-bg-surface: #ffffff;
   --color-bg-surface-muted: #f4f6f9;
@@ -74,8 +74,16 @@
   background-color: #000;
 }
 
+.bg-surface-muted-custom {
+  background-color: var(--color-bg-surface-muted);
+}
+
 .border-custom {
   border: 1px solid var(--color-border);
+}
+
+.border-top-custom {
+  border-top: 1px solid var(--color-border);
 }
 
 .secondary-custom {

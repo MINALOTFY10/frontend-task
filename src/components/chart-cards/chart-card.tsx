@@ -12,7 +12,7 @@ export default function ChartCard({ title, children, action }: ChartCardProps) {
   const defaultAction = (
     <>
       <span className="fw-semibold">Last Year</span>
-      <FaCalendarAlt className="ms-2" size={11} />
+      <FaCalendarAlt className="mt-1" size={11} />
     </>
   );
 
@@ -27,7 +27,7 @@ export default function ChartCard({ title, children, action }: ChartCardProps) {
             {title}
           </div>
           <div
-            className="d-flex align-items-center gap-3 w-auto border-0 text-secondary"
+            className="d-flex align-items-center gap-2 w-auto border-0 text-secondary-custom"
             style={{ fontSize: "0.75rem" }}
           >
             {action ?? defaultAction}

@@ -1,6 +1,5 @@
-import { Card, Badge, Stack } from "react-bootstrap";
-import styles from "./stat-card.module.css";
-import { PiArrowBendLeftUpBold, PiArrowBendRightDownBold } from "react-icons/pi";
+import { Card, Stack } from "react-bootstrap";
+import TrendBadge from "../../shared/trend-badge";
 
 const DATE_RANGE = "From Jan 01, 2026 – April 30, 2026";
 
@@ -18,12 +17,7 @@ export default function StatCard({ label, value, trend }: StatCardProps) {
       <Card.Body className="p-3">
         <Stack direction="horizontal" className="justify-content-between align-items-center mb-0">
           <span className="text-secondary small fw-semibold">{label}</span>
-          <Badge pill className={`fw-medium ${trend.positive ? styles.badgePositive : styles.badgeNegative}`}>
-            {trend.positive ?
-              <PiArrowBendLeftUpBold />
-            : <PiArrowBendRightDownBold />}
-            {trend.value}%
-          </Badge>
+          <TrendBadge value={trend.value} positive={trend.positive} />
         </Stack>
 
         <div className="mb-4">
