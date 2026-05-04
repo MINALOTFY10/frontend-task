@@ -6,7 +6,7 @@ import SaleChart from "../../components/chart-cards/sale-chart/sale-chart";
 import ProductStatisticsChart from "../../components/chart-cards/product-statistics-chart";
 import OrdersByTimeHeatmap from "../../components/chart-cards/orders-by-time-heatmap/orders-by-time-heatmap";
 import Schedule from "../../components/schedule-card/schedule-card";
-import ProductsSection from "../../components/product-cards/products-section";
+import ProductsSection from "../../components/product-card/products-section";
 import styles from "./dashboard.module.css";
 
 export default function Dashboard() {
