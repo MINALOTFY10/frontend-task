@@ -3,6 +3,7 @@ import ProtectedRoute from "./layout/protected-route";
 import AppShell from "./layout/app-shell";
 import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
+import Products from "./pages/products";
 
 const router = createBrowserRouter([
   { path: "/login", element: <Login /> },
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Navigate to="/dashboard" replace /> },
       { path: "dashboard", element: <Dashboard /> },
+      { path: "products", element: <Products /> },
     ],
   },
 

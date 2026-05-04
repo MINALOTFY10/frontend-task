@@ -14,7 +14,9 @@ export default function usePagination<T>(items: T[], pageSize: number): Paginati
 
   const totalPages = useMemo(() => Math.max(1, Math.ceil(items.length / pageSize)), [items.length, pageSize]);
 
-  if (page > totalPages) setPage(totalPages);
+  useEffect(() => {
+    if (page > totalPages) setPage(totalPages);
+  }, [page, totalPages]);
 
   const paged = useMemo(() => {
     const start = (page - 1) * pageSize;
