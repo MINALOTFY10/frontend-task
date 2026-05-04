@@ -1,5 +1,5 @@
 import { get, post } from "./api-client";
-import type { User, Product, ProductsResponse } from "./types";
+import type { User, Product, ProductsResponse, Cart } from "./types";
 
 // localStorage is used for simplicity with DummyJSON, but in real production apps I made
 // tokens was stored in httpOnly cookies which i couldn't do with mock api
@@ -44,4 +44,8 @@ export async function getProductById(id: number): Promise<Product> {
 
 export async function searchProducts(query: string): Promise<ProductsResponse> {
   return get<ProductsResponse>(`/products/search?q=${encodeURIComponent(query)}`);
+}
+
+export async function getCarts(limit = 10, skip = 0) {
+  return get<{ carts: Cart[]; total: number }>(`/carts?limit=${limit}&skip=${skip}`);
 }
