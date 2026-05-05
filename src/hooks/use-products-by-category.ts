@@ -4,7 +4,6 @@ import type { Product } from "../services/types";
 
 export function useProductsByCategory(categorySlug: string, limit = 100) {
   const [products, setProducts] = useState<Product[]>([]);
-  const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -20,5 +19,5 @@ export function useProductsByCategory(categorySlug: string, limit = 100) {
       .finally(() => setLoading(false));
   }, [categorySlug, limit]);
 
-  return { products, total, loading, error };
+  return { products, loading, error };
 }

@@ -9,7 +9,7 @@ interface Props {
 export default function ProtectedRoute({ children }: Props) {
   const { user, loading } = useAuth()
 
-  if (loading) return <LoadingSpinner label="Loading session..." />
+  if (loading) return <LoadingSpinner />
   if (!user) return <Navigate to="/login" replace />
 
   return <>{children}</>
