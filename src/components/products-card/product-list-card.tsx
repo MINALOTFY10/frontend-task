@@ -17,12 +17,11 @@ type ProductListVariant = "default" | "products-page";
 
 type ProductListCardProps = {
   products: Product[];
-  total: number;
   pageSize?: number;
   variant?: ProductListVariant;
 };
 
-export default function ProductListCard({ products, total, pageSize = PAGE_SIZE, variant = "default" }: ProductListCardProps) {
+export default function ProductListCard({ products, pageSize = PAGE_SIZE, variant = "default" }: ProductListCardProps) {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const filtered = useMemo(() => {

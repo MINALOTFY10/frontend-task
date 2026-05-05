@@ -27,7 +27,7 @@ export default function ProductsSection() {
           ) : (
             <>
               <Col lg={8} xl={9} className="my-2">
-                <ProductListCard products={products} total={total} />
+                <ProductListCard products={products} />
               </Col>
               <Col lg={4} xl={3} className="my-2">
                 <ConversionRateCard total={total} products={products} />

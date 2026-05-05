@@ -30,6 +30,7 @@ export default function ProductsPage() {
   return (
     <div className="p-3 d-flex flex-column gap-3">
       <div className="d-flex align-items-center justify-content-end gap-2 flex-wrap">
+        <h4 className="me-auto fw-bold ms-1 fs-2">Product Zone</h4>
         <div className={`${styles.inputGroup} bg-card-custom border-custom d-flex align-items-center gap-2 px-2 rounded-3`}>
           <span className="d-flex align-items-center flex-shrink-0 text-secondary-custom">
             <LuSearch size={14} />
