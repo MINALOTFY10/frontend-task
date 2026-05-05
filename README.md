@@ -1,73 +1,92 @@
-# React + TypeScript + Vite
+# Frontend Dashboard Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive React dashboard application with authentication, product management, and real-time analytics.
 
-Currently, two official plugins are available:
+### 1. Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Clone the repository and install dependencies:
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/MINALOTFY10/frontend-task
+cd frontend-task
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Run Locally (Development)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The application will be available at **http://localhost:5173**
+You can login as guest to test the application.
+
+### 3. Environment Configuration (Optional)
+
+Create a `.env.local` file for development (optional):
+
+```env
+VITE_API_URL=https://dummyjson.com
+```
+
+For Docker builds, the API URL is set in `docker-compose.yml`:
+
+```yaml
+args:
+  VITE_API_URL: https://dummyjson.com
+```
+
+## Build & Deployment
+
+### 1. Build for Production
+
+```bash
+npm run build
+```
+
+### 2. Preview Production Build Locally
+
+```bash
+npm run preview
+```
+
+## Deployment Options
+
+### Option A: Vercel (Recommended for Serverless)
+
+1. Push your code to GitHub
+2. Visit https://vercel.com
+3. Click "New Project" and import your repository
+4. Select "React" framework preset
+5. Environment variables: Set `VITE_API_URL=https://dummyjson.com`
+6. Deploy
+
+Or use the Vercel CLI:
+
+```bash
+npm install -g vercel
+vercel
+```
+
+### Option B: Docker (Recommended for Production Servers)
+
+**Build and run with Docker:**
+
+```bash
+docker-compose up --build
+```
+
+The app will be available at **http://localhost:8080**
+
+**Docker Commands:**
+
+```bash
+# Build and start
+docker-compose up --build
+
+# Stop containers
+docker-compose down
+
+# Check running containers
+docker-compose ps
 ```
