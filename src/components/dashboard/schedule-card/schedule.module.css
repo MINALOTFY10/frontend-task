@@ -1,4 +1,5 @@
-.avatar, .extraCount {
+.avatar,
+.extraCount {
   width: 26px;
   height: 26px;
   margin-left: -8px;
@@ -8,4 +9,6 @@
   margin-left: 0;
 }
 
-.avatar { object-fit: cover; }
+.avatar {
+  object-fit: cover;
+}

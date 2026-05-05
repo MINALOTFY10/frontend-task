@@ -2,7 +2,7 @@ import { Stack } from "react-bootstrap";
 import { ResponsiveContainer, BarChart, Bar, XAxis, Tooltip, type TooltipContentProps } from "recharts";
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
 import { useSaleStats } from "../../../hooks/use-sale-stats";
-import ChartCard from "../chart-card";
+import ChartCardWrapper from "./chart-card-wrapper";
 import LoadingErrorState from "../../shared/loading-error-state";
 
 function SaleTooltip({ payload, label }: TooltipContentProps<ValueType, NameType>) {
@@ -26,7 +26,7 @@ export default function SaleChart() {
   const { data, loading, error } = useSaleStats();
 
   return (
-    <ChartCard
+    <ChartCardWrapper
       title={
         <Stack direction="horizontal" gap={2}>
           <span>Sale Performance</span>
@@ -52,6 +52,6 @@ export default function SaleChart() {
           </BarChart>
         </ResponsiveContainer>
       )}
-    </ChartCard>
+    </ChartCardWrapper>
   );
 }

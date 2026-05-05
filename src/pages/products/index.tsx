@@ -11,7 +11,7 @@ export default function ProductsPage() {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
 
-  const { products, total, loading: productsLoading, error: productsError } = useProductsByCategory(activeCategory, 100);
+  const { products, loading: productsLoading, error: productsError } = useProductsByCategory(activeCategory, 100);
   const { categories, loading: categoriesLoading, error: categoriesError } = useProductCategories();
   const loading = productsLoading || categoriesLoading;
   const error = productsError || categoriesError;
@@ -21,7 +21,7 @@ export default function ProductsPage() {
     return (
       <div className="p-3">
         <div className="rounded-4 border bg-card-custom p-4" style={{ minHeight: 320 }}>
-          <LoadingErrorState loading={loading} error={error}  errorLabel="Unable to load products" />
+          <LoadingErrorState loading={loading} error={error} errorLabel="Unable to load products" />
         </div>
       </div>
     );
@@ -70,7 +70,7 @@ export default function ProductsPage() {
 
       <Row className="g-0">
         <Col xs={12}>
-          <ProductGridCard products={products} total={total} pageSize={12} searchQuery={query} />
+          <ProductGridCard products={products} pageSize={12} searchQuery={query} />
         </Col>
       </Row>
     </div>

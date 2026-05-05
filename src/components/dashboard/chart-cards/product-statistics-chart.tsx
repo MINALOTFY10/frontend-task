@@ -1,8 +1,8 @@
 import { ResponsiveContainer, BarChart, Bar, XAxis, Tooltip, type TooltipContentProps, YAxis } from "recharts";
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
-import { useSaleStats } from "../../hooks/use-sale-stats";
-import ChartCard from "./chart-card";
-import LoadingErrorState from "../shared/loading-error-state";
+import { useSaleStats } from "../../../hooks/use-sale-stats";
+import ChartCardWrapper from "./chart-card-wrapper";
+import LoadingErrorState from "../../shared/loading-error-state";
 
 function ProductTooltip({ payload, label }: TooltipContentProps<ValueType, NameType>) {
   if (!payload?.length) return null;
@@ -24,7 +24,7 @@ export default function ProductStatisticsChart() {
   const { data, loading, error } = useSaleStats();
 
   return (
-    <ChartCard title="Product Statics">
+    <ChartCardWrapper title="Product Statics">
       {loading || error ? (
         <LoadingErrorState loading={loading} error={error} errorLabel="Unable to load product stats" />
       ) : (
@@ -43,6 +43,6 @@ export default function ProductStatisticsChart() {
           </BarChart>
         </ResponsiveContainer>
       )}
-    </ChartCard>
+    </ChartCardWrapper>
   );
 }

@@ -1,12 +1,12 @@
 import { Row, Col } from "react-bootstrap";
-import DashboardHeader from "../../components/dashboard-header/dashboard-header";
-import PreformanceCards from "../../components/preformance-cards/preformance-cards";
-import StoreCardsRow from "../../components/store-cards/store-cards-row";
-import TransactionChart from "../../components/chart-cards/transaction-chart";
-import SaleChart from "../../components/chart-cards/sale-chart/sale-chart";
-import ProductStatisticsChart from "../../components/chart-cards/product-statistics-chart";
-import OrdersByTimeHeatmap from "../../components/chart-cards/orders-by-time-heatmap/orders-by-time-heatmap";
-import Schedule from "../../components/schedule-card/schedule-card";
+import DashboardHeader from "../../components/dashboard/header/dashboard-header";
+import PreformanceCards from "../../components/dashboard/performance-cards/performance-cards";
+import StoreCardsRow from "../../components/dashboard/store-cards/store-cards-row";
+import TransactionChart from "../../components/dashboard/chart-cards/transaction-chart";
+import SaleChart from "../../components/dashboard/chart-cards/sale-chart";
+import ProductStatisticsChart from "../../components/dashboard/chart-cards/product-statistics-chart";
+import OrdersByTimeHeatmap from "../../components/dashboard/chart-cards/orders-by-time-heatmap";
+import Schedule from "../../components/dashboard/schedule-card/schedule-card";
 import ProductsSection from "../../components/products-card/products-section";
 import styles from "./dashboard.module.css";
 

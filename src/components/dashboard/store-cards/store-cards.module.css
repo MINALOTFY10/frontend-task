@@ -1,13 +1,3 @@
-.seeMore,
-.meta {
-  font-size: var(--font-size-md-sm);
-}
-
-.members {
-  font-size: var(--font-size-2xs);
-  font-weight: 600;
-}
-
 .avatar,
 .extraCount {
   width: 22px;

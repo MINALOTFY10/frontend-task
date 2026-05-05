@@ -1,8 +1,7 @@
 import ReactECharts from "echarts-for-react";
-import ChartCard from "../chart-card";
+import ChartCardWrapper from "./chart-card-wrapper";
 import { useOrdersByTime } from "../../../hooks/use-orders-by-time";
 import { FaCalendarAlt } from "react-icons/fa";
-import styles from "./orders-by-time-heatmap.module.css";
 import LoadingErrorState from "../../shared/loading-error-state";
 
 const COLOR_SCALE = ["#fff", "#dbe9ff", "#b3d2ff", "#7fb6ff", "var(--color-primary)"];
@@ -38,33 +37,32 @@ export default function OrdersByTimeHeatmap() {
   };
 
   return (
-    <ChartCard
+    <ChartCardWrapper
       title="Orders By Time"
       action={
-        <div className={styles.headerAction}>
-          <div className={styles.legend}>
+        <div className="d-flex align-items-center gap-2">
+          <div className="d-flex align-items-center gap-1 text-secondary-custom">
             <span>0</span>
-            <div className={styles.legendScale}>
+            <div className="d-flex align-items-center gap-1">
               {COLOR_SCALE.map((color) => (
-                <span key={color} className={styles.legendSwatch} style={{ background: color }} />
+                <span key={color} className="rounded-1" style={{ background: color, width: "10px", height: "10px" }} />
               ))}
             </div>
             <span>{maxValue}</span>
           </div>
-          <div className={styles.monthPill}>
+          <div className={`d-inline-flex align-items-center gap-2 px-2 py-1 rounded-pill text-secondary-custom`}>
             <span>April 2026</span>
             <FaCalendarAlt size={11} />
           </div>
         </div>
       }
     >
-      {loading || error ? (
+      {loading || error ?
         <LoadingErrorState loading={loading} error={error} errorLabel="Unable to load orders heatmap" />
-      ) : (
-        <div className={styles.heatmap}>
-          <ReactECharts option={option} style={{ width: "100%", height: "100%" }} opts={{ renderer: "svg" }} />
+      : <div style={{ height: "100%" }}>
+          <ReactECharts option={option} style={{ height: "100%" }} opts={{ renderer: "svg" }} />
         </div>
-      )}
-    </ChartCard>
+      }
+    </ChartCardWrapper>
   );
 }

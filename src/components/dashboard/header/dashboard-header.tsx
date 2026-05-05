@@ -1,6 +1,6 @@
 import { LuBell } from "react-icons/lu";
 import { LuCalendarDays, LuDownload, LuSearch, LuSlidersHorizontal, LuX } from "react-icons/lu";
-import { useAuth } from "../../context/auth-context";
+import { useAuth } from "../../../context/auth-context";
 
 export default function DashboardHeader({ notificationCount = 0 }: { notificationCount?: number }) {
   const { user } = useAuth();

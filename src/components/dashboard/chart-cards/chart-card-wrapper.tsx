@@ -2,13 +2,13 @@ import { Card, Stack } from "react-bootstrap";
 import { FaCalendarAlt } from "react-icons/fa";
 import type { ReactNode } from "react";
 
-interface ChartCardProps {
+interface ChartCardWrapperProps {
   title: ReactNode;
   children: ReactNode;
   action?: ReactNode;
 }
 
-export default function ChartCard({ title, children, action }: ChartCardProps) {
+export default function ChartCardWrapper({ title, children, action }: ChartCardWrapperProps) {
   const defaultAction = (
     <>
       <span className="fw-semibold">Last Year</span>

@@ -61,11 +61,7 @@ export default function ProductListCard({ products, total, pageSize = PAGE_SIZE,
             </div>
 
             <Stack direction="horizontal" gap={2} className="align-items-center  text-secondary-custom">
-              <button
-                className="btn btn-link p-0 small text-decoration-none text-secondary-custom fw-semibold fs-12"
-                type="button"
-                onClick={() => navigate("/products")}
-              >
+              <button className="btn btn-link p-0 small text-decoration-none text-secondary-custom fw-semibold fs-12" type="button" onClick={() => navigate("/products")}>
                 See More
                 <LuChevronRight size={14} className="ms-1" />
               </button>
