@@ -21,6 +21,19 @@ export interface Product {
   category: string;
   thumbnail: string;
   images: string[];
+  sku?: string;
+  availabilityStatus?: string;
+  shippingInformation?: string;
+  warrantyInformation?: string;
+  returnPolicy?: string;
+  reviews?: ProductReview[];
+}
+
+export interface ProductReview {
+  rating: number;
+  comment: string;
+  date: string;
+  reviewerName: string;
 }
 
 export interface ProductCategory {

@@ -17,7 +17,7 @@ export default function Schedule() {
         <Stack direction="horizontal" className="justify-content-between mb-3">
           <span className="fw-bold text-primary-custom">Schedule</span>
           <Stack direction="horizontal" gap={2}>
-            <button className="btn p-0 border-0 btn-link text-decoration-none fw-semibold text-primary-custom" style={{ fontSize: "0.75rem" }}>
+            <button className="btn p-0 border-0 btn-link text-decoration-none fw-semibold text-primary-custom fs-10">
               See All
             </button>
             <button className="btn p-0 border-0 ms-1">

@@ -21,11 +21,11 @@ export default function ConversionRateCard({ total = 0, products = [] }: { total
     <Card className="rounded-4 h-100 border">
       <Card.Body className="py-3 px-3 d-flex flex-column">
         <Stack direction="horizontal" className="justify-content-between align-items-center mb-4">
-          <div className="text-primary-custom fw-bold" style={{ fontSize: "0.95rem" }}>
+          <div className="text-primary-custom fw-bold fs-7">
             Conversion Rate
           </div>
           <div className="d-flex align-items-center gap-2 w-auto border-0 text-secondary-custom small">
-            <span className="fw-semibold" style={{ fontSize: "0.7rem" }}>
+            <span className="fw-semibold fs-12">
               Last Year
             </span>
             <FaCalendarAlt size={11} />
@@ -39,18 +39,18 @@ export default function ConversionRateCard({ total = 0, products = [] }: { total
             <div key={item.label} className="d-flex align-items-center justify-content-between py-2 border-top-custom">
               <div>
                 <div className="fw-semibold small text-primary-custom">{item.label}</div>
-                <div className="text-muted-custom" style={{ fontSize: "0.72rem" }}>
+                <div className="text-muted-custom fs-11">
                   {item.percent}%
                 </div>
               </div>
-              <div className="text-primary-custom fw-semibold" style={{ fontSize: "0.8rem" }}>
+              <div className="text-primary-custom fw-semibold fs-9">
                 {item.value.toLocaleString()}
               </div>
             </div>
           ))}
         </div>
 
-        <button className="btn btn-link p-0 text-secondary fw-semibold text-decoration-none mt-3 small mt-auto" type="button" style={{ fontSize: "0.8rem" }}>
+        <button className="btn btn-link p-0 text-secondary fw-semibold text-decoration-none mt-3 small mt-auto fs-9" type="button">
           Learn More →
         </button>
       </Card.Body>

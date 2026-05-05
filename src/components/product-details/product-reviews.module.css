@@ -1,0 +1,52 @@
+.wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 3px rgba(28, 28, 46, 0.05),
+    0 4px 16px rgba(28, 28, 46, 0.04);
+}
+
+.avgNum {
+  font-size: var(--font-size-display);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.writeBanner {
+  font-size: var(--font-size-label);
+}
+
+.loginLink {
+  cursor: pointer;
+}
+.loginLink:hover {
+  text-decoration: underline;
+}
+
+.card {
+  background: var(--color-bg-card);
+  border-radius: 14px;
+  transition: border-color 0.18s, transform 0.18s;
+}
+.card:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+  transform: translateY(-1px);
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-text-primary);
+  font-size: var(--font-size-label);
+  flex-shrink: 0;
+}
+
+.date {
+  margin-top: 2px;
+}
+
+.comment {
+  line-height: 1.6;
+}

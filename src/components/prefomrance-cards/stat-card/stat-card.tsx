@@ -27,7 +27,7 @@ export default function StatCard({ label, value, trend }: StatCardProps) {
           </span>
         </div>
 
-        <p className="fw-semibold mb-0 text-secondary-custom" style={{ fontSize: "0.72rem" }}>
+        <p className="fw-semibold mb-0 text-secondary-custom fs-11">
           {DATE_RANGE}
         </p>
       </Card.Body>

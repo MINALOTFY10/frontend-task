@@ -1,0 +1,56 @@
+.productCard {
+  position: relative;
+  border-radius: 14px;
+  transition:
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 24px rgba(25, 140, 254, 0.1),
+    0 1px 4px rgba(28, 28, 46, 0.06);
+}
+
+.imageWrap {
+  height: 136px;
+  overflow: hidden;
+}
+
+.productImage {
+  max-width: 78%;
+  max-height: 78%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(28, 28, 46, 0.12));
+}
+
+.favoriteButton {
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+}
+
+.currentPrice {
+  font-size: var(--font-size-title);
+}
+
+.originalPrice {
+  text-decoration: line-through;
+}
+
+.title {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.addButton {
+  right: 12px;
+  bottom: 12px;
+  width: 32px;
+  height: 32px;
+}

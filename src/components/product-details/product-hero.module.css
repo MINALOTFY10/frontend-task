@@ -1,0 +1,81 @@
+.mainImg {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.badge {
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.thumbBtn {
+  transition:
+    border-color 0.18s,
+    transform 0.18s;
+}
+.thumbBtn:hover,
+.thumbActive {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.thumbImg {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+}
+
+.title,
+.price {
+  font-size: var(--font-size-hero-title);
+}
+
+.originalPrice {
+  color: var(--color-negative);
+}
+
+.saveBadge {
+  background: var(--color-positive-bg);
+  color: var(--color-positive);
+}
+
+.ratingNum {
+  color: #f59e0b;
+}
+
+.qtyWrap {
+  height: 44px;
+}
+.qtyBtn {
+  width: 42px;
+  height: 44px;
+}
+.qtyBtn:hover {
+  background-color: var(--color-bg-surface-muted);
+}
+.qtyVal {
+  min-width: 38px;
+  height: 44px;
+  font-size: var(--font-size-label);
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.cartBtn {
+  height: 44px;
+  font-size: var(--font-size-label);
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+.cartBtn:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 992px) {
+  .mainImg {
+    height: 250px;
+  }
+}
