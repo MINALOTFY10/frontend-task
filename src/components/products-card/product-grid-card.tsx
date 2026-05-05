@@ -8,12 +8,11 @@ import ProductGridItem from "./product-grid-item";
 
 type ProductGridCardProps = {
   products: Product[];
-  total: number;
   pageSize?: number;
   searchQuery: string;
 };
 
-export default function ProductGridCard({ products, total, pageSize = 10, searchQuery }: ProductGridCardProps) {
+export default function ProductGridCard({ products,  pageSize = 10, searchQuery }: ProductGridCardProps) {
   const navigate = useNavigate();
 
   const filtered = () => {

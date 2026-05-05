@@ -1,0 +1,11 @@
+.image_banner {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  right: 10px;
+  bottom: -10px;
+}
+
+.banner_button {
+  background: var(text-primary-custom);
+}

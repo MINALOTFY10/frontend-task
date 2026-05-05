@@ -7,7 +7,7 @@ interface KpiStats {
   totalOrders: number;
 }
 
-export function usePreformanceStats() {
+export function usePerformanceStats() {
   const [stats, setStats] = useState<KpiStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

@@ -1,8 +1,8 @@
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, type TooltipContentProps } from "recharts";
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
-import { useTransactionStats } from "../../hooks/use-transaction-stats";
-import ChartCard from "./chart-card";
-import LoadingErrorState from "../shared/loading-error-state";
+import { useTransactionStats } from "../../../hooks/use-transaction-stats";
+import ChartCardWrapper from "./chart-card-wrapper";
+import LoadingErrorState from "../../shared/loading-error-state";
 
 function TransactionTooltip({ payload, label }: TooltipContentProps<ValueType, NameType>) {
   return (
@@ -26,7 +26,7 @@ export default function TransactionChart() {
   const { data, loading, error } = useTransactionStats();
 
   return (
-    <ChartCard title="Transaction Activity">
+    <ChartCardWrapper title="Transaction Activity">
       {loading || error ? (
         <LoadingErrorState loading={loading} error={error} errorLabel="Unable to load transaction chart" />
       ) : (
@@ -42,6 +42,6 @@ export default function TransactionChart() {
         </ResponsiveContainer>
       )}
    
-    </ChartCard>
+    </ChartCardWrapper>
   );
 }

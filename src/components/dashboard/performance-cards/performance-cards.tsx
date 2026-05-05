@@ -1,11 +1,11 @@
 import { Col } from "react-bootstrap";
-import StatCard from "./stat-card/stat-card";
+import StatCard from "./stat-card";
 import OfferBanner from "./offer-banner/offer-banner";
-import { usePreformanceStats } from "../../hooks/use-preformance-stats";
-import LoadingErrorState from "../shared/loading-error-state";
+import { usePerformanceStats } from "../../../hooks/use-performance-stats";
+import LoadingErrorState from "../../shared/loading-error-state";
 
-export default function PreformanceCards() {
-  const { stats, loading, error } = usePreformanceStats();
+export default function PerformanceCards() {
+  const { stats, loading, error } = usePerformanceStats();
 
   return (
     <>

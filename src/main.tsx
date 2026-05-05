@@ -5,13 +5,16 @@ import "./index.css";
 import App from "./App.tsx";
 import { ThemeProvider } from "./context/theme-context";
 import { AuthProvider } from "./context/auth-context";
+import ErrorBoundary from "./components/shared/error-boundary";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <AuthProvider>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </AuthProvider>
+    <ErrorBoundary>
+      <AuthProvider>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </AuthProvider>
+    </ErrorBoundary>
   </StrictMode>,
 );

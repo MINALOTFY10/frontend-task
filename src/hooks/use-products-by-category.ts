@@ -10,14 +10,11 @@ export function useProductsByCategory(categorySlug: string, limit = 100) {
 
   useEffect(() => {
     setLoading(true);
-    const data = categorySlug && categorySlug !== "all"
-      ? getProductsByCategory(categorySlug, limit, 0)
-      : getProducts(limit, 0);
+    const data = categorySlug && categorySlug !== "all" ? getProductsByCategory(categorySlug, limit, 0) : getProducts(limit, 0);
 
     data
-      .then(({ products: items, total: totalCount }) => {
+      .then(({ products: items }) => {
         setProducts(items);
-        setTotal(totalCount);
       })
       .catch((err: Error) => setError(err.message))
       .finally(() => setLoading(false));

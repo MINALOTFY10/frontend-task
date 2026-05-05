@@ -7,19 +7,21 @@ import avaterImg from "../assets/header-avater.png";
 import siteImg from "../assets/icon.svg";
 import darkSiteImg from "../assets/dark-icon.svg";
 import { useTheme } from "../context/theme-context";
+import { useNavigate } from "react-router";
 
 export default function Header() {
   const { theme } = useTheme();
+  const navigate = useNavigate();
 
   return (
     <header className={`d-flex align-items-center justify-content-between px-3 py-2 ${styles.header}`}>
-      <div className="d-flex align-items-center">
+      <button className="d-flex align-items-center bg-transparent border-0 p-0" onClick={() => navigate("/dashboard")}>
         <img src={theme === "light" ? siteImg : darkSiteImg} alt="Site icon" width={32} height={32} className="me-2" />
         <div className="fs-6">
           <span className="fw-bold">Sugar</span>
           <span className="fw-semibold">panel</span>
         </div>
-      </div>
+      </button>
 
       <div className="d-flex align-items-center gap-3">
         <button

@@ -5,13 +5,13 @@ import { FaInbox, FaTableCells } from "react-icons/fa6";
 import { IoLayers } from "react-icons/io5";
 
 export const navItems = [
-  { label: "Overview", icon: MdGridView, active: true },
+  { label: "Dashboard", icon: MdGridView, path: "/dashboard", active: true },
+    { label: "Products", icon: FaTableCells, path: "/products" },
   { label: "Analytics", icon: GoGraph },
   { label: "Inventory", icon: MdOutlineInventory2 },
   { label: "Customers", icon: MdOutlineGroups },
   { label: "Notification", icon: FaBell },
   { label: "Inbox", icon: FaInbox },
   { label: "Integrations", icon: IoLayers },
-  { label: "Products", icon: FaTableCells },
   { label: "Settings", icon: MdOutlineSettings },
 ];

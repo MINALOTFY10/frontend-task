@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Card, Stack, Nav } from "react-bootstrap";
-import { LuChevronLeft, LuChevronRight, LuSearch } from "react-icons/lu";
-import { useSchedule } from "../../hooks/use-schedule";
+import { LuSearch } from "react-icons/lu";
+import { useSchedule } from "../../../hooks/use-schedule";
 import MeetingCard from "./meeting-card";
-import MonthNavigater from "../shared/month-navigater";
+import MonthNavigater from "../../shared/month-navigater";
 
 const TABS = ["Meetings", "Events", "Holiday"];
 
@@ -17,9 +17,7 @@ export default function Schedule() {
         <Stack direction="horizontal" className="justify-content-between mb-3">
           <span className="fw-bold text-primary-custom">Schedule</span>
           <Stack direction="horizontal" gap={2}>
-            <button className="btn p-0 border-0 btn-link text-decoration-none fw-semibold text-primary-custom fs-10">
-              See All
-            </button>
+            <button className="btn p-0 border-0 btn-link text-decoration-none fw-semibold text-primary-custom fs-10">See All</button>
             <button className="btn p-0 border-0 ms-1">
               <LuSearch size={13} />
             </button>
