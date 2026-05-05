@@ -1,3 +1,9 @@
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 :root {
   --color-bg-page: #f8f5f5;
   --color-bg-card: #ffffff;

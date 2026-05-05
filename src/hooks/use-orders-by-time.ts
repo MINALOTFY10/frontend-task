@@ -11,8 +11,11 @@ const emptyGrid = (): number[][] => Array.from({ length: ROWS }, () => new Array
 
 export function useOrdersByTime() {
   const [data, setData] = useState<number[][]>(emptyGrid);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    setLoading(true);
     getCarts(80, 0)
       .then(({ carts }) => {
         const grid = emptyGrid();
@@ -26,7 +29,8 @@ export function useOrdersByTime() {
 
         setData(grid);
       })
-      .catch((err: Error) => new Error(`Failed to fetch Orders heatmap stats: ${err.message}`));
+      .catch((err: Error) => setError(err.message))
+      .finally(() => setLoading(false));
   }, []);
 
   return {
@@ -34,5 +38,7 @@ export function useOrdersByTime() {
     dayLabels: DAY_LABELS,
     timeLabels: TIME_LABELS,
     maxValue: Math.max(0, ...data.flat()),
+    loading,
+    error,
   };
 }

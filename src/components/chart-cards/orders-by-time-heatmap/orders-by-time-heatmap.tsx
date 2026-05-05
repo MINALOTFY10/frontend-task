@@ -3,6 +3,7 @@ import ChartCard from "../chart-card";
 import { useOrdersByTime } from "../../../hooks/use-orders-by-time";
 import { FaCalendarAlt } from "react-icons/fa";
 import styles from "./orders-by-time-heatmap.module.css";
+import LoadingErrorState from "../../shared/loading-error-state";
 
 const COLOR_SCALE = ["#fff", "#dbe9ff", "#b3d2ff", "#7fb6ff", "var(--color-primary)"];
 
@@ -14,7 +15,7 @@ const AXIS_STYLE = {
 };
 
 export default function OrdersByTimeHeatmap() {
-  const { data, dayLabels, timeLabels, maxValue } = useOrdersByTime();
+  const { data, dayLabels, timeLabels, maxValue, loading, error } = useOrdersByTime();
 
   const option = {
     grid: { top: 6, right: 12, bottom: 30, left: 34 },
@@ -57,9 +58,13 @@ export default function OrdersByTimeHeatmap() {
         </div>
       }
     >
-      <div className={styles.heatmap}>
-        <ReactECharts option={option} style={{ width: "100%", height: "100%" }} opts={{ renderer: "svg" }} />
-      </div>
+      {loading || error ? (
+        <LoadingErrorState loading={loading} error={error} errorLabel="Unable to load orders heatmap" />
+      ) : (
+        <div className={styles.heatmap}>
+          <ReactECharts option={option} style={{ width: "100%", height: "100%" }} opts={{ renderer: "svg" }} />
+        </div>
+      )}
     </ChartCard>
   );
 }

@@ -2,15 +2,23 @@ import { Col } from "react-bootstrap";
 import StatCard from "./stat-card/stat-card";
 import OfferBanner from "./offer-banner/offer-banner";
 import { usePreformanceStats } from "../../hooks/use-preformance-stats";
+import LoadingErrorState from "../shared/loading-error-state";
 
 export default function PreformanceCards() {
-  const { stats } = usePreformanceStats();
+  const { stats, loading, error } = usePreformanceStats();
 
   return (
     <>
       <Col xs={12} sm={6} xl={3}>
         <OfferBanner />
       </Col>
+      {(loading || error) && (
+        <Col xs={12} sm={6} xl={9}>
+          <div className="rounded-4 h-100 border bg-card-custom p-4">
+            <LoadingErrorState loading={loading} error={error} errorLabel="Unable to load performance stats" />
+          </div>
+        </Col>
+      )}
       {stats && (
         <>
           <Col xs={12} sm={6} xl={3}>

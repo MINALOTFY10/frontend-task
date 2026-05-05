@@ -2,6 +2,7 @@ import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tool
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
 import { useTransactionStats } from "../../hooks/use-transaction-stats";
 import ChartCard from "./chart-card";
+import LoadingErrorState from "../shared/loading-error-state";
 
 function TransactionTooltip({ payload, label }: TooltipContentProps<ValueType, NameType>) {
   return (
@@ -22,11 +23,13 @@ function TransactionTooltip({ payload, label }: TooltipContentProps<ValueType, N
 }
 
 export default function TransactionChart() {
-  const { data } = useTransactionStats();
+  const { data, loading, error } = useTransactionStats();
 
   return (
     <ChartCard title="Transaction Activity">
-     
+      {loading || error ? (
+        <LoadingErrorState loading={loading} error={error} errorLabel="Unable to load transaction chart" />
+      ) : (
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" vertical={false} />
@@ -37,6 +40,7 @@ export default function TransactionChart() {
             <Line type="monotone" dataKey="success" name="Success Transactions" stroke="#000" strokeWidth={2.5} dot={false} activeDot={{ r: 5 }} />
           </LineChart>
         </ResponsiveContainer>
+      )}
    
     </ChartCard>
   );

@@ -2,7 +2,7 @@ import { Card } from "react-bootstrap";
 import { Link, useParams } from "react-router";
 import { LuArrowLeft } from "react-icons/lu";
 import { useProductDetail } from "../../hooks/use-product-detail";
-import LoadingSpinner from "../../components/shared/loading-spinner";
+import LoadingErrorState from "../../components/shared/loading-error-state";
 import ProductHero from "../../components/product-details/product-hero";
 import ProductReviews from "../../components/product-details/product-reviews";
 
@@ -30,7 +30,9 @@ export default function ProductDetail() {
 
   if (loading) return (
     <Card className="border-0 rounded-4">
-      <Card.Body className="p-4"><LoadingSpinner label="Loading product details..." /></Card.Body>
+      <Card.Body className="p-4" style={{ minHeight: 220 }}>
+        <LoadingErrorState loading={loading} error={error} errorLabel="Unable to load product details" />
+      </Card.Body>
     </Card>
   );
 

@@ -3,6 +3,7 @@ import { ResponsiveContainer, BarChart, Bar, XAxis, Tooltip, type TooltipContent
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
 import { useSaleStats } from "../../../hooks/use-sale-stats";
 import ChartCard from "../chart-card";
+import LoadingErrorState from "../../shared/loading-error-state";
 
 function SaleTooltip({ payload, label }: TooltipContentProps<ValueType, NameType>) {
   if (!payload?.length) return null;
@@ -22,7 +23,7 @@ function SaleTooltip({ payload, label }: TooltipContentProps<ValueType, NameType
 }
 
 export default function SaleChart() {
-  const { data } = useSaleStats();
+  const { data, loading, error } = useSaleStats();
 
   return (
     <ChartCard
@@ -32,21 +33,25 @@ export default function SaleChart() {
         </Stack>
       }
     >
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} barCategoryGap="0.5%">
-          <XAxis dataKey="month" tick={{ fontSize: "var(--font-size-chart-axis)", fill: "var(--color-text-primary)" }} axisLine={false} tickLine={false} />
-          <Tooltip content={(props) => <SaleTooltip {...props} />} />
-          <Bar
-            dataKey="sales"
-            shape={({ x = 0, y = 0, width = 0, height = 0 }) => (
-              <g>
-                <rect x={x} y={y} width={width} height={height} fill="var(--color-primary-light)" />
-                <rect x={x} y={y} width={width} height={3} fill="var(--color-primary)" />
-              </g>
-            )}
-          />
-        </BarChart>
-      </ResponsiveContainer>
+      {loading || error ? (
+        <LoadingErrorState loading={loading} error={error} errorLabel="Unable to load sales chart" />
+      ) : (
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} barCategoryGap="0.5%">
+            <XAxis dataKey="month" tick={{ fontSize: "var(--font-size-chart-axis)", fill: "var(--color-text-primary)" }} axisLine={false} tickLine={false} />
+            <Tooltip content={(props) => <SaleTooltip {...props} />} />
+            <Bar
+              dataKey="sales"
+              shape={({ x = 0, y = 0, width = 0, height = 0 }) => (
+                <g>
+                  <rect x={x} y={y} width={width} height={height} fill="var(--color-primary-light)" />
+                  <rect x={x} y={y} width={width} height={3} fill="var(--color-primary)" />
+                </g>
+              )}
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      )}
     </ChartCard>
   );
 }

@@ -10,8 +10,11 @@ interface ChartDataPoint {
 
 export function useTransactionStats() {
   const [data, setData] = useState<ChartDataPoint[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    setLoading(true);
     getCarts(60, 0)
       .then(({ carts }) => {
         const perMonth = Math.ceil(carts.length / 12);
@@ -27,8 +30,9 @@ export function useTransactionStats() {
 
         setData(chartData);
       })
-      .catch((err: Error) => new Error(`Failed to fetch Transaction stats: ${err.message}`));
+      .catch((err: Error) => setError(err.message))
+      .finally(() => setLoading(false));
   }, []);
 
-  return { data };
+  return { data, loading, error };
 }

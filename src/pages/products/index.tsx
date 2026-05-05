@@ -5,14 +5,27 @@ import ProductGridCard from "../../components/products-card/product-grid-card";
 import { useProductsByCategory } from "../../hooks/use-products-by-category";
 import { useProductCategories } from "../../hooks/use-product-categories";
 import styles from "./products-page.module.css";
+import LoadingErrorState from "../../components/shared/loading-error-state";
 
 export default function ProductsPage() {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
 
-  const { products, total } = useProductsByCategory(activeCategory, 100);
-  const categories = useProductCategories();
+  const { products, total, loading: productsLoading, error: productsError } = useProductsByCategory(activeCategory, 100);
+  const { categories, loading: categoriesLoading, error: categoriesError } = useProductCategories();
+  const loading = productsLoading || categoriesLoading;
+  const error = productsError || categoriesError;
   const options = [{ slug: "all", name: "All Categories" }, ...categories];
+
+  if (loading || error) {
+    return (
+      <div className="p-3">
+        <div className="rounded-4 border bg-card-custom p-4" style={{ minHeight: 320 }}>
+          <LoadingErrorState loading={loading} error={error}  errorLabel="Unable to load products" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="p-3 d-flex flex-column gap-3">
