@@ -21,7 +21,7 @@ export function useProductDetail(productId: number | null) {
       .then((data) => {
         setProduct(data);
       })
-      .catch((err: Error) => new Error(`Failed to fetch Categories: ${err.message}`))
+      .catch((err: Error) => setError(err.message))
       .finally(() => setLoading(false));
   }, [productId]);
 

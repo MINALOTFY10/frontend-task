@@ -43,11 +43,17 @@
       "content"
       "sidebar";
     height: auto;
-    overflow: visible;
+    overflow-x: hidden;
   }
 
   .content {
-    overflow-y: visible;
+    overflow-x: hidden;
     padding: 16px 16px 90px;
+  }
+}
+
+@media (max-width: 400px) {
+  .content {
+    padding: 12px 8px 90px;
   }
 }

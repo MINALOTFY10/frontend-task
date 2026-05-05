@@ -9,8 +9,11 @@ interface KpiStats {
 
 export function usePreformanceStats() {
   const [stats, setStats] = useState<KpiStats | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    setLoading(true);
     getProducts(100, 0)
       .then((data) => {
         const prices = data.products.map((p) => p.price);
@@ -21,8 +24,9 @@ export function usePreformanceStats() {
           totalOrders: data.total,
         });
       })
-      .catch((err: Error) => new Error(`Failed to fetch Preformance stats: ${err.message}`));
+      .catch((err: Error) => setError(err.message))
+      .finally(() => setLoading(false));
   }, []);
 
-  return { stats };
+  return { stats, loading, error };
 }
