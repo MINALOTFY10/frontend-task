@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { login as loginService, logout as logoutService, getStoredUser } from "../services/auth-service";
-import type { User } from "../services/auth-service";
+import type { User } from "../services/types";
 
 interface AuthContextType {
   user: Omit<User, "accessToken" | "refreshToken"> | null;

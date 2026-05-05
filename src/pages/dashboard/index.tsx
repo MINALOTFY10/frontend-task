@@ -1,5 +1,6 @@
 import { Row, Col } from "react-bootstrap";
-import PreformanceCards from "../../components/prefomrance-cards/preformance-cards";
+import DashboardHeader from "../../components/dashboard-header/dashboard-header";
+import PreformanceCards from "../../components/preformance-cards/preformance-cards";
 import StoreCardsRow from "../../components/store-cards/store-cards-row";
 import TransactionChart from "../../components/chart-cards/transaction-chart";
 import SaleChart from "../../components/chart-cards/sale-chart/sale-chart";
@@ -11,7 +12,8 @@ import styles from "./dashboard.module.css";
 
 export default function Dashboard() {
   return (
-    <div className="p-3 d-flex flex-column gap-3">
+    <div className="p-0 d-flex flex-column gap-3">
+      <DashboardHeader notificationCount={2} />
       <Row className="g-3">
         <PreformanceCards />
       </Row>
