@@ -7,7 +7,7 @@ function ProductTooltip({ payload, label }: TooltipContentProps<ValueType, NameT
   if (!payload?.length) return null;
 
   return (
-    <div className="bg-white rounded-3 p-3" style={{ fontSize: "0.85rem" }}>
+    <div className="bg-white rounded-3 p-3 fs-tooltip">
       <p className="fw-semibold mb-2 text-secondary-custom">{label}, 2026</p>
       <div className="d-flex align-items-center gap-2">
         <div className="rounded-1 bg-primary-custom" style={{ width: 15, height: 15 }} />
@@ -26,8 +26,8 @@ export default function ProductStatisticsChart() {
     <ChartCard title="Product Statics">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data} barCategoryGap="8%" margin={{ left: 0, bottom: 0 }}>
-          <XAxis dataKey="month" tick={{ fontSize: 11, fill: "var(--color-text-primary)" }} axisLine={false} tickLine={false} />
-          <YAxis tick={{ fontSize: 11, fill: "var(--color-text-primary)" }} axisLine={false} tickLine={false} width={42} />
+          <XAxis dataKey="month" tick={{ fontSize: "var(--font-size-chart-axis)", fill: "var(--color-text-primary)" }} axisLine={false} tickLine={false} />
+          <YAxis tick={{ fontSize: "var(--font-size-chart-axis)", fill: "var(--color-text-primary)" }} axisLine={false} tickLine={false} width={42} />
           <Tooltip content={(props) => <ProductTooltip {...props} />} />
           <Bar
             dataKey="sales"

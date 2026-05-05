@@ -1,5 +1,5 @@
 :root {
-  --color-bg-page: #f5f2f2;
+  --color-bg-page: #f8f5f5;
   --color-bg-card: #ffffff;
   --color-bg-surface: #ffffff;
   --color-bg-surface-muted: #f4f6f9;
@@ -18,6 +18,23 @@
   --radius-card: 14px;
   --radius-badge: 6px;
   --font-primary: "Inter", sans-serif;
+
+  --font-size-2xs: 0.65rem;
+  --font-size-xs: 0.68rem;
+  --font-size-sm-2: 0.7rem;
+  --font-size-sm-1: 0.72rem;
+  --font-size-sm: 0.75rem;
+  --font-size-md-sm: 0.78rem;
+  --font-size-base-sm: 0.8rem;
+  --font-size-base: 0.82rem;
+  --font-size-body-sm: 0.85rem;
+  --font-size-body: 0.875rem;
+  --font-size-label: 0.9rem;
+  --font-size-subtitle: 0.95rem;
+  --font-size-title: 1.05rem;
+  --font-size-display: 2.4rem;
+  --font-size-hero-title: clamp(1.4rem, 2.5vw, 1.9rem);
+  --font-size-chart-axis: 11px;
 }
 
 [data-bs-theme="dark"] {
@@ -88,4 +105,56 @@
 
 .secondary-custom {
   color: var(--color-secondary);
+}
+
+.bg-card-custom {
+  background-color: var(--color-bg-card);
+}
+
+.icon-muted-custom {
+  color: var(--color-icon-muted);
+}
+
+.positive-bg-custom {
+  background-color: var(--color-positive-bg);
+}
+
+.positive-custom {
+  color: var(--color-positive);
+}
+
+.fs-7 {
+  font-size: var(--font-size-subtitle) !important;
+}
+
+.fs-8 {
+  font-size: var(--font-size-body) !important;
+}
+
+.fs-9 {
+  font-size: var(--font-size-base) !important;
+}
+
+.fs-10 {
+  font-size: var(--font-size-sm) !important;
+}
+
+.fs-11 {
+  font-size: var(--font-size-sm-1) !important;
+}
+
+.fs-12 {
+  font-size: var(--font-size-sm-2) !important;
+}
+
+.fs-13 {
+  font-size: var(--font-size-xs) !important;
+}
+
+.fs-14 {
+  font-size: var(--font-size-2xs) !important;
+}
+
+.fs-tooltip {
+  font-size: var(--font-size-body-sm) !important;
 }

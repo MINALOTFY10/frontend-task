@@ -1,52 +1,63 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import ProductListCard from "../../components/product-card/product-list-card";
-import { useCategoryProducts } from "../../hooks/use-category-products";
+import { LuRefreshCw, LuSearch } from "react-icons/lu";
+import ProductGridCard from "../../components/products-card/product-grid-card";
+import { useProductsByCategory } from "../../hooks/use-products-by-category";
 import { useProductCategories } from "../../hooks/use-product-categories";
-
-const ALL_CATEGORY = {
-  slug: "all",
-  name: "All Categories",
-  url: "",
-};
+import styles from "./products-page.module.css";
 
 export default function ProductsPage() {
-  const [activeCategory, setActiveCategory] = useState(ALL_CATEGORY.slug);
+  const [query, setQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const { products, total } = useProductsByCategory(activeCategory, 100);
   const categories = useProductCategories();
-  const { products, total } = useCategoryProducts(activeCategory, 100);
-
-  const options = [ALL_CATEGORY, ...categories];
-
-  const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setActiveCategory(event.target.value);
-  };
+  const options = [{ slug: "all", name: "All Categories" }, ...categories];
 
   return (
     <div className="p-3 d-flex flex-column gap-3">
-      <div className="d-flex flex-wrap align-items-center justify-content-between gap-2">
-        <div className="fw-bold fs-4">Products</div>
-        <div className="d-flex align-items-center gap-2">
-          <span className="small text-secondary-custom">Category</span>
-          <div className="border rounded-3 bg-body-tertiary px-2 py-1">
-            <select
-              className="form-select form-select-sm border-0 bg-transparent shadow-none px-2"
-              value={activeCategory}
-              onChange={handleCategoryChange}
-              aria-label="Filter products by category"
-            >
-              {options.map((category) => (
-                <option key={category.slug} value={category.slug}>
-                  {category.name}
-                </option>
-              ))}
-            </select>
-          </div>
+      <div className="d-flex align-items-center justify-content-end gap-2 flex-wrap">
+        <div className={`${styles.inputGroup} bg-card-custom border-custom d-flex align-items-center gap-2 px-2 rounded-3`}>
+          <span className="d-flex align-items-center flex-shrink-0 text-secondary-custom">
+            <LuSearch size={14} />
+          </span>
+          <input
+            type="text"
+            className={`${styles.searchInput} form-control border-0 bg-transparent p-0 text-primary-custom`}
+            placeholder="What are you looking for?"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            aria-label="Search products"
+          />
+          <button
+            className="d-flex align-items-center flex-shrink-0 border-0 bg-transparent p-0 text-secondary-custom"
+            type="button"
+            aria-label="Clear search"
+            onClick={() => setQuery("")}
+          >
+            <LuRefreshCw size={13} />
+          </button>
+        </div>
+
+        <div className={`${styles.inputGroup} bg-card-custom border-custom d-flex align-items-center px-2 rounded-3`}>
+          <select
+            className={`${styles.categorySelect} border-0 bg-transparent p-0 text-primary-custom`}
+            value={activeCategory}
+            onChange={(e) => setActiveCategory(e.target.value)}
+            aria-label="Filter by category"
+          >
+            {options.map((cat) => (
+              <option key={cat.slug} value={cat.slug}>
+                {cat.name}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 
-      <Row className="g-3">
-        <Col xs={12} className="my-2">
-          <ProductListCard products={products} total={total} pageSize={10} variant="products-page" />
+      <Row className="g-0">
+        <Col xs={12}>
+          <ProductGridCard products={products} total={total} pageSize={12} searchQuery={query} />
         </Col>
       </Row>
     </div>

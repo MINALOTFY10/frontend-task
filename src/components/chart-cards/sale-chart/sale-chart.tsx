@@ -7,7 +7,7 @@ import ChartCard from "../chart-card";
 function SaleTooltip({ payload, label }: TooltipContentProps<ValueType, NameType>) {
   if (!payload?.length) return null;
   return (
-    <div className="bg-white rounded-3 p-3" style={{ fontSize: "0.85rem" }}>
+    <div className="bg-white rounded-3 p-3 fs-tooltip">
       <p className="fw-semibold mb-2 text-secondary-custom">
         {label}, 2026
       </p>
@@ -34,7 +34,7 @@ export default function SaleChart() {
     >
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data} barCategoryGap="0.5%">
-          <XAxis dataKey="month" tick={{ fontSize: 11, fill: "var(--color-text-primary)" }} axisLine={false} tickLine={false} />
+          <XAxis dataKey="month" tick={{ fontSize: "var(--font-size-chart-axis)", fill: "var(--color-text-primary)" }} axisLine={false} tickLine={false} />
           <Tooltip content={(props) => <SaleTooltip {...props} />} />
           <Bar
             dataKey="sales"

@@ -1,0 +1,28 @@
+.inputGroup {
+  height: 36px;
+  transition: border-color 0.15s;
+}
+.inputGroup:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(25, 140, 254, 0.1);
+}
+
+.searchInput {
+  font-size: var(--font-size-body-sm);
+  width: 240px;
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.categorySelect {
+  font-size: var(--font-size-body-sm);
+  cursor: pointer;
+  appearance: auto;
+}
+
+.categorySelect option {
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+}

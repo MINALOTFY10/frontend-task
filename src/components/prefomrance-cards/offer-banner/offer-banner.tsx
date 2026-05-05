@@ -6,13 +6,12 @@ export default function OfferBanner() {
   return (
     <div className={`${styles.banner} d-flex flex-column justify-content-between p-3 h-100`}>
       <img src={offerImg} alt="Offer" className={styles.image_banner} />
-      <p className="fw-semibold text-white mb-2" style={{ fontSize: "0.9rem", maxWidth: "130px", lineHeight: "1.4" }}>
+      <p className="fw-semibold text-white mb-2 fs-8" style={{ maxWidth: "130px", lineHeight: "1.4" }}>
         Sharpen your Skill with Professional Online
       </p>
       <Button
         size="sm"
-        className="fw-semibold border-0 w-auto align-self-start rounded-3 bg-black-custom text-bg-card-custom"
-        style={{ fontSize: "0.70rem" }}
+        className="fw-semibold border-0 w-auto align-self-start rounded-3 bg-black-custom text-bg-card-custom fs-12"
       >
         Upgrade Now
       </Button>

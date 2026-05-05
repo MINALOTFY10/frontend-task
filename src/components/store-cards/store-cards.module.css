@@ -1,10 +1,10 @@
 .seeMore,
 .meta {
-  font-size: 0.78rem;
+  font-size: var(--font-size-md-sm);
 }
 
 .members {
-  font-size: 0.65rem;
+  font-size: var(--font-size-2xs);
   font-weight: 600;
 }
 

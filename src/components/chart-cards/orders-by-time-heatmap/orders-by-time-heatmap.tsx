@@ -9,7 +9,7 @@ const COLOR_SCALE = ["#fff", "#dbe9ff", "#b3d2ff", "#7fb6ff", "var(--color-prima
 const AXIS_STYLE = {
   axisLine: { show: false },
   axisTick: { show: false },
-  axisLabel: { color: "var(--color-text-primary)", fontSize: 11 },
+  axisLabel: { color: "var(--color-text-primary)", fontSize: "var(--font-size-chart-axis)" },
   splitArea: { show: false },
 };
 

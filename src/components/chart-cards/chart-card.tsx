@@ -27,8 +27,7 @@ export default function ChartCard({ title, children, action }: ChartCardProps) {
             {title}
           </div>
           <div
-            className="d-flex align-items-center gap-2 w-auto border-0 text-secondary-custom"
-            style={{ fontSize: "0.75rem" }}
+            className="d-flex align-items-center gap-2 w-auto border-0 text-secondary-custom fs-10"
           >
             {action ?? defaultAction}
           </div>
