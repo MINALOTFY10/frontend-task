@@ -1,5 +1,4 @@
 import styles from "./header.module.css";
-import { MdFullscreen } from "react-icons/md";
 import { IoChatbubblesOutline } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa6";
 import { FaRegBell } from "react-icons/fa";
@@ -33,9 +32,6 @@ export default function Header() {
           <FaChevronDown size={10} aria-hidden="true" />
         </button>
 
-        <button type="button" className={`${styles.iconBtn} btn rounded-circle p-0`} aria-label="Fullscreen">
-          <MdFullscreen size={16} />
-        </button>
         <button type="button" className={`${styles.iconBtn} btn rounded-circle p-0`} aria-label="Chat">
           <IoChatbubblesOutline size={16} />
         </button>
