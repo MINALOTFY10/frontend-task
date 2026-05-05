@@ -1,13 +1,15 @@
 import { useNavigate, useLocation } from "react-router";
 import styles from "./sidebar.module.css";
-import { MdOutlineLightMode, MdOutlineDarkMode, MdOutlineSettings } from "react-icons/md";
+import { MdOutlineLightMode, MdOutlineDarkMode, MdOutlineLogout } from "react-icons/md";
 import { useTheme } from "../context/theme-context";
+import { useAuth } from "../context/auth-context";
 import { navItems } from "../utils/nav-items";
 
 export default function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
+  const { logout } = useAuth();
 
   return (
     <aside className={`${styles.sidebar} d-flex flex-column flex-md-column flex-row align-items-center justify-content-between py-2`} aria-label="Primary navigation">
@@ -46,10 +48,14 @@ export default function Sidebar() {
 
         <button
           type="button"
-          className={`${styles.settingsButton} btn d-flex align-items-center justify-content-center rounded-circle border-0 p-0 shadow-sm`}
-          aria-label="Settings"
+          className={`${styles.logoutButton} btn d-flex align-items-center justify-content-center rounded-circle border-0 p-0 shadow-sm`}
+          aria-label="Logout"
+          onClick={() => {
+            logout();
+            navigate("/login", { replace: true });
+          }}
         >
-          <MdOutlineSettings className="fs-6 lh-1" aria-hidden />
+          <MdOutlineLogout className="fs-6 lh-1" aria-hidden />
         </button>
       </div>
     </aside>
