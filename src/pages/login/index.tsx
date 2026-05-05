@@ -36,6 +36,19 @@ function Login() {
     }
   };
 
+  const handleGuestLogin = async () => {
+    setError("");
+    setLoading(true);
+    try {
+      await login("emilys", "emilyspass");
+      navigate("/dashboard", { replace: true });
+    } catch {
+      setError("Guest login failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <Container fluid className="d-flex align-items-center justify-content-center min-vh-100 bg-page-custom">
       <Card className="w-100 border-0 shadow-sm p-4 rounded-4" style={{ maxWidth: 560 }}>
@@ -64,6 +77,16 @@ function Login() {
 
             <Button type="submit" className="w-100 mt-3 fw-semibold py-2" disabled={loading}>
               {loading ? "Logging in..." : "Log In"}
+            </Button>
+
+            <Button 
+              type="button" 
+              variant="outline-secondary" 
+              className="w-100 mt-2 fw-semibold py-2" 
+              disabled={loading}
+              onClick={handleGuestLogin}
+            >
+              Continue as Guest
             </Button>
           </Form>
 
